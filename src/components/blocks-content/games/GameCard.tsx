@@ -23,7 +23,7 @@ const GameCard = () => {
         </div>
       </div>
       <div className={s.buttonsContainer}>
-        <Button text='PAY 4.99$'/>
+        <Button text='BUY 4.99$'/>
         <Button text='PLAY'/>
       </div>
     </div>
