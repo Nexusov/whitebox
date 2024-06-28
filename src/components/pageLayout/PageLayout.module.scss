@@ -1,0 +1,12 @@
+@import '/src/vars.scss';
+
+.container, main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  background-color: $background-color-primary;
+}
+
+.container {
+  padding: $padding-vertical-global $padding-horizontal-global;
+}

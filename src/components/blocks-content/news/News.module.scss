@@ -1,0 +1,58 @@
+@import '/src/vars.scss';
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cardItem {
+  width: 315px;
+  height: 305px;
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+}
+
+.overlayImg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  object-fit: fill;
+}
+
+.preview, .descriptionContainer {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.descriptionContainer {
+  padding: 16px;
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(20px);
+}
+
+.cardTitle{
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -1,0 +1,12 @@
+@import '/src/vars.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+  width: 100%;
+  background-color: $background-color-secondary;
+  box-shadow: $box-shadow-container;
+  border-radius: 30px;
+  padding: 32px 64px;
+}

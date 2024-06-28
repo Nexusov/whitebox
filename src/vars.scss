@@ -1,0 +1,38 @@
+$background-color-primary: #ECF0F3;
+$background-color-secondary: #f6f8f9;
+$background-color-lightgray: #EAEEF0;
+
+$text-color-dark-primary: #111111;
+$text-color-dark-secondary: #39404E;
+$text-color-light-primary: #F4F5F7;
+$text-color-light-secondary: #DDE3ED;
+
+$background-color-dark-primary: $text-color-dark-primary;
+$background-color-dark-secondary: $text-color-dark-secondary;
+
+$icon-color-light: $text-color-light-primary;
+$icon-color-dark: $text-color-dark-primary;
+
+$button-color-dark-primary: $text-color-dark-primary;
+$button-color-dark-light: $text-color-light-primary;
+
+$dark-button-color-hover-dark-primary: #363636;
+$dark-button-color-active-dark-primary: #242424;
+
+$box-shadow-container:  12.5715px 22.6287px 28.0763px rgba(209, 217, 230, 0.67), 12.5715px 10.0572px 14.2477px rgba(209, 217, 230, 0.34), 12.5715px 11.7334px 15.9239px rgba(209, 217, 230, 0.4), 12.5715px 14.6667px 18.8572px rgba(209, 217, 230, 0.48);
+
+$errorColor: #e74c3c;
+
+$padding-horizontal-global: 165.5px;
+$padding-vertical-global: 25px;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+

@@ -1,0 +1,27 @@
+@import '/src/vars.scss';
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: $background-color-secondary;
+  box-shadow: $box-shadow-container;
+  border-radius: 30px;
+  padding: 8px 32px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.controlsContainer {
+  display: flex;
+  margin-left: auto;
+  gap: 8px;
+
+  svg {
+    cursor: pointer;
+  }
+}

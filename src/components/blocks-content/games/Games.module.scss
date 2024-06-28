@@ -1,0 +1,70 @@
+@import '/src/vars.scss';
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.gamesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.cardItem {
+  display: flex;
+  border-radius: 22px;
+  padding-right: 40px;
+  background: $background-color-lightgray;
+}
+
+.poster {
+  width: 35%;
+  max-height: 214px;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 35.5px 10px 35.5px 40px;
+}
+
+.raitingContainer {
+  display: flex;
+  gap: 25px;
+}
+
+.achievments, .rating {
+  > p {
+    margin-bottom: 7px;
+  }
+}
+
+.achievmentsCount, .ratingCount {
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 16px;
+}
+
+.achievmentsCount {
+  background: $background-color-dark-primary;
+}
+
+.ratingCount {
+  background: #78D2FF;
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-left: auto;
+  padding: 55px 0;
+}
