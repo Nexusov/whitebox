@@ -2,8 +2,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Suspense, useEffect } from 'react';
 import Home from './pages/home/Home';
 import Loader from './components/loader/Loader';
-import { useStore }  from './store/store' ;
-import { getCountryByIP } from './utils/getCountryByIp';
+import onStartup from './utils/onStartup';
 
 const router = createBrowserRouter([
   {
@@ -13,16 +12,9 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  const setCountryCode = useStore(state => state.setCountryCode);
-
   useEffect(() => {
-    const fetchCountryCode = async () => {
-      const countryCode = await getCountryByIP();
-      setCountryCode(countryCode);
-    };
-
-    fetchCountryCode();
-  }, [setCountryCode]);
+    onStartup(); 
+  }, []);
 
   return (
     <RouterProvider router={router} />
