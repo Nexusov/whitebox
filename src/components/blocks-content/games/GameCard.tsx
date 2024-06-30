@@ -5,7 +5,7 @@ import s from './Games.module.scss';
 const GameCard = () => {
   return (
     <div className={s.cardItem}>
-      <img className={s.poster} src="https://media.discordapp.net/attachments/561591566045544449/1256061757030531182/Rectangle_4351.png?ex=667f662b&is=667e14ab&hm=ca5d06f73807c1575c6bd5d286512cd79d9ef94d5e8b156481bba84976ca4c14&=&quality=lossless" alt="Game poster" />
+      <img className={s.poster} src="https://media.discordapp.net/attachments/561591566045544449/1256061757030531182/Rectangle_4351.png?ex=6682b1eb&is=6681606b&hm=ec66adef835949a2c3fe5ebeac9109da78835b16d1aa96d49c4b3e25ca970277&=&quality=lossless" alt="Game poster" />
       <div className={s.infoContainer}>
         <div className={s.mainInfo}>
           <Text type='subtitle' theme='dark'>House of Decay</Text>
