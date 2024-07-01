@@ -4,5 +4,14 @@
   padding: 10px 30px;
   background: $button-color-dark-primary;
   border-radius: 16px;
-  color: $text-color-light-primary
+  color: $text-color-light-primary;
+
+  &--buy {
+    width: 160px;
+    /* padding: 70px 30px; */
+  }
+
+  &--play {
+    padding: 10px 50px;
+  }
 }
