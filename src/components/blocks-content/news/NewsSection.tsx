@@ -13,7 +13,7 @@ const NewsSection = () => {
           <ExclamationIcon />
           <Text type='title' theme="dark">News</Text>
         </div>
-        <Button text="see more" />
+        <Button text="see more" variant="default" />
       </div>
       <NewsList />
     </Section>
