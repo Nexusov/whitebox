@@ -4,11 +4,6 @@ import s from './Games.module.scss';
 
 const GamesList = () => {
   const games = useStore(state => state.games);
-  const reviews = useStore(state => state.reviews);
-
-
-  console.log(games)
-  console.log(reviews)
 
   return (
     <div className={s.gamesContainer}>

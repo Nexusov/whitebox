@@ -1,29 +1,16 @@
-import apiClient from "../api/apiClient";
-import { gameIds, steamDetailsApiUrl } from "../config";
+import fetchData from "../api/apiClient";
 import { useStore } from "../store/store";
 import { transformGame } from "../utils/dataTransformers";
-
-type ApiResponse = {
-  success: boolean;
-  data: GameData;
-}
+import { gameIds } from "../config";
+import fetchCountryCode from "./fetchCountryCode";
 
 const fetchGames = async (): Promise<void> => {
   try {
-    const requests = gameIds.map(id => 
-      apiClient<Record<string, ApiResponse>>(`${steamDetailsApiUrl}?appids=${id}&cc=`).then(r => r[id])
-    );
-    const responses = await Promise.all(requests);
-    const data: GameData[] = responses.map(response => {
-      const apiResponse = response as ApiResponse;
-      if (apiResponse && apiResponse.success && apiResponse.data) {
-        return apiResponse.data;
-      } else {
-        throw new Error('Unexpected error');
-      }
-    });
+    const ids = gameIds.join(',');
+    const countryCode = await fetchCountryCode()
+    const combinedData = await fetchData<GameData[]>(`/games?ids=${ids}&cc=${countryCode}`);
     const setGames = useStore.getState().setGames;
-    setGames(transformGame(data));
+    setGames(transformGame(combinedData));
   } catch (error) {
     const typedError = error as Error;
     console.error('Error fetching games:', typedError.message);

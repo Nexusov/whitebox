@@ -1,6 +1,4 @@
 type StoreState = {
-  countryCode: string;
-  setCountryCode: (code: string) => void;
   games: TransformedGameData[];
   setGames: (games: TransformedGameData[]) => void;
   reviews: TransformedReviewData[];
@@ -8,17 +6,27 @@ type StoreState = {
 }
 
 type GameRating = {
-  rating_count: number;
+  rating_count: number | '??';
   rating_text: string;
 }
 
-interface TransformedReviewData extends ReviewQuerySummary {
+type Reviews = {
+  num_reviews: number;
+  review_score: number;
+  review_score_desc: string;
+  total_positive: number;
+  total_negative: number;
+  total_reviews: number;
+}
+
+interface TransformedReviewData extends Reviews {
   game_rating: GameRating
 }
 
 interface TransformedGameData extends GameData {
   formated_price_overview: string;
   formated_release_date: string;
+  formated_game_rating: GameRating
 }
 
 type GameData = {
@@ -146,20 +154,5 @@ type GameData = {
       descriptors: string;
     };
   };
-}
-
-type ReviewData = {
-  cursor: string;
-  query_summary: ReviewQuerySummary;
-  success: boolean;
-  reviews: number
-}
-
-type ReviewQuerySummary = {
-  num_reviews: number;
-  review_score: number;
-  review_score_desc: string;
-  total_positive: number;
-  total_negative: number;
-  total_reviews: number;
+  reviews: Reviews;
 }

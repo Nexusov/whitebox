@@ -1,5 +1,6 @@
 import Button from '../../button/Button';
 import Text from '../../text/Text';
+import GameRating from './GameRating';
 import s from './Games.module.scss';
 
 type GameCardProps = {
@@ -19,12 +20,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
           <Text type='subtitle' theme='dark'>{game.name}</Text>
           <Text type='default' theme='dark'>{game.formated_release_date}</Text>
         </div>
-        <div className={s.raitingContainer}>
-          <div className={s.rating}>
-            <Text type='description' theme='dark'>Mostly positive</Text>
-            <div className={s.ratingCount}><Text type='count' theme='dark'>80</Text></div>
-          </div>
-        </div>
+        <GameRating rating_text={game.formated_game_rating.rating_text} rating_count={game.formated_game_rating.rating_count}/>
       </div>
       <div className={s.buttonsContainer}>
         <Button text={game.formated_price_overview} variant='buy'/>
