@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { Suspense, useEffect } from 'react';
 import Home from './pages/home/Home';
 import Loader from './components/loader/Loader';
@@ -8,6 +8,10 @@ const router = createBrowserRouter([
   {
     index: true,
     element: <Suspense fallback={<Loader />}><Home /></Suspense>,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" replace />
   }
 ]);
 
