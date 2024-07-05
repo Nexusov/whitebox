@@ -12,6 +12,10 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
     window.location.href = `steam://launch/${game.steam_appid}`;
   };
 
+  const handleSteamPageClick = () => {
+    window.open(`https://store.steampowered.com/app/${game.steam_appid}/`, '_blank');
+  };
+
   return (
     <div className={s.cardItem}>
       <img className={s.poster} src={game.header_image} alt={`${game.name}'s poster`} />
@@ -23,7 +27,7 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
         <GameRating rating_text={game.formated_game_rating.rating_text} rating_count={game.formated_game_rating.rating_count}/>
       </div>
       <div className={s.buttonsContainer}>
-        <Button text={game.formated_price_overview} variant='buy'/>
+        <Button text={game.formated_price_overview} variant='buy' onClick={handleSteamPageClick}/>
         <Button text='PLAY' variant='play' onClick={handlePlayClick}/>
       </div>
     </div>
