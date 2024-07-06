@@ -1,8 +1,9 @@
 import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom'
-import { Suspense, useEffect } from 'react';
-import Home from './pages/home/Home';
+import { Suspense, lazy, useEffect } from 'react';
 import Loader from './components/loader/Loader';
 import onStartup from './utils/onStartup';
+
+const Home = lazy(() => import('./pages/home/Home'));
 
 const router = createBrowserRouter([
   {
