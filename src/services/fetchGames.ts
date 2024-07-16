@@ -8,7 +8,7 @@ const fetchGames = async (): Promise<void> => {
   try {
     const ids = gameIds.join(',');
     const countryCode = await fetchCountryCode()
-    const combinedData = await fetchData<GameData[]>(`/games?ids=${ids}&cc=${countryCode}`);
+    const combinedData = await fetchData<GameData[]>(`/games.php?ids=${ids}&cc=${countryCode}`);
     const setGames = useStore.getState().setGames;
     setGames(transformGame(combinedData));
   } catch (error) {
