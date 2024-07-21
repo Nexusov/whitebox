@@ -1,69 +1,102 @@
 @import '/src/vars.scss';
 
 .text {
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 140%;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 140%;
 
-  &--default {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 140%;
-  }
+	&--default {
+		font-weight: 700;
 
-  &--title, &--logo {
-    font-weight: 900;
-    font-size: 24px;
-    text-transform: uppercase;
-  }
+		@include tablet {
+			font-size: 13px;
+		}
+	}
 
-  &--logo {
-    font-family: 'Archivo Black', sans-serif;
-  }
+	&--title,
+	&--logo {
+		font-weight: 900;
+		font-size: 24px;
+		text-transform: uppercase;
 
-  &--subtitle {
-    font-size: 24px;
-    font-weight: 900;
-  }
+		@include mobile {
+			font-size: 16px;
+		}
+	}
 
-  &--description {
-    font-size: 14px;
-  }
+	&--logo {
+		font-family: 'Archivo Black', sans-serif;
+	}
 
-  &--count {
-    font-size: 23px;
-    font-weight: 800;
-  }
+	&--subtitle {
+		font-size: 24px;
+		font-weight: 900;
+
+		@include laptop {
+			font-size: 22px;
+		}
+
+		@include tablet {
+			font-size: 20px;
+		}
+
+		@include mobile {
+			font-size: 18px;
+		}
+	}
+
+	&--description {
+		@include tablet {
+			font-size: 13px;
+		}
+	}
+
+	&--count {
+		font-size: 23px;
+		font-weight: 800;
+
+		@include tablet {
+			font-size: 20px;
+		}
+
+		@include mobile {
+			font-size: 18px;
+		}
+	}
+
+	@include non-desktop {
+		line-height: 115%;
+	}
 }
 
 .dark {
-  &.text {
-    &--default,
-    &--title,
-    &--logo,
-    &--count,
-    &--subtitle {
-      color: $text-color-dark-primary;
-    }
+	&.text {
+		&--default,
+		&--title,
+		&--logo,
+		&--count,
+		&--subtitle {
+			color: $text-color-dark-primary;
+		}
 
-    &--description {
-      color: $text-color-dark-secondary;
-    }
-  }
+		&--description {
+			color: $text-color-dark-secondary;
+		}
+	}
 }
 
 .light {
-  &.text {
-    &--default,
-    &--title,
-    &--logo,
-    &--count,
-    &--subtitle {
-      color: $text-color-light-primary;
-    }
+	&.text {
+		&--default,
+		&--title,
+		&--logo,
+		&--count,
+		&--subtitle {
+			color: $text-color-light-primary;
+		}
 
-    &--description {
-      color: $text-color-light-secondary;
-    }
-  }
+		&--description {
+			color: $text-color-light-secondary;
+		}
+	}
 }

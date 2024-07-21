@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'react-responsive';
 import Button from '../../button/Button';
 import Text from '../../text/Text';
 import GameRating from './GameRating';
@@ -8,6 +9,8 @@ type GameCardProps = {
 }
 
 const GameCard: React.FC<GameCardProps> = ({ game }) => {
+  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+
   const handlePlayClick = () => {
     window.location.href = `steam://launch/${game.steam_appid}`;
   };
@@ -24,11 +27,11 @@ const GameCard: React.FC<GameCardProps> = ({ game }) => {
           <Text type='subtitle' theme='dark'>{game.name}</Text>
           <Text type='default' theme='dark'>{game.formated_release_date}</Text>
         </div>
-        <GameRating rating_text={game.formated_game_rating.rating_text} rating_count={game.formated_game_rating.rating_count}/>
+        <GameRating rating_text={game.formated_game_rating.rating_text} rating_count={game.formated_game_rating.rating_count} />
       </div>
       <div className={s.buttonsContainer}>
-        <Button text={game.formated_price_overview} variant='buy' onClick={handleSteamPageClick}/>
-        <Button text='PLAY' variant='play' onClick={handlePlayClick}/>
+        <Button text={game.formated_price_overview} variant='buy' onClick={handleSteamPageClick} />
+        {!isMobile && <Button text='PLAY' variant='play' onClick={handlePlayClick} />}
       </div>
     </div>
   )

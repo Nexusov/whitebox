@@ -5,13 +5,40 @@
   background: $button-color-dark-primary;
   border-radius: 16px;
   color: $text-color-light-primary;
+  text-wrap: nowrap;
+  font-size: 14px;
 
   &--buy {
     width: 160px;
-    /* padding: 70px 30px; */
+
+    @include laptop {
+      width: 140px;
+    }
+
+    @include tablet {
+      width: 110px;
+    }
+
+    @include mobile {
+      width: auto;
+    }
   }
 
   &--play {
     padding: 10px 50px;
+  }
+
+  @include laptop {
+    padding: 10px 30px;
+  }
+
+  @include tablet {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  @include mobile {
+    font-size: 10px;
+    padding: 8px 16px;
   }
 }

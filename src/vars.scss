@@ -1,3 +1,8 @@
+$desktop: 1300px;
+$laptop: 1280px;
+$tablet: 769px;
+$mobile: 560px;
+
 $background-color-primary: #ECF0F3;
 $background-color-secondary: #f6f8f9;
 $background-color-lightgray: #EAEEF0;
@@ -19,7 +24,10 @@ $button-color-dark-light: $text-color-light-primary;
 $dark-button-color-hover-dark-primary: #363636;
 $dark-button-color-active-dark-primary: #242424;
 
-$box-shadow-container:  12.5715px 22.6287px 28.0763px rgba(209, 217, 230, 0.67), 12.5715px 10.0572px 14.2477px rgba(209, 217, 230, 0.34), 12.5715px 11.7334px 15.9239px rgba(209, 217, 230, 0.4), 12.5715px 14.6667px 18.8572px rgba(209, 217, 230, 0.48);
+$box-shadow-container: 12.5715px 22.6287px 28.0763px rgba(209, 217, 230, 0.67),
+12.5715px 10.0572px 14.2477px rgba(209, 217, 230, 0.34),
+12.5715px 11.7334px 15.9239px rgba(209, 217, 230, 0.4),
+12.5715px 14.6667px 18.8572px rgba(209, 217, 230, 0.48);
 
 $errorColor: #e74c3c;
 
@@ -36,3 +44,38 @@ $padding-vertical-global: 25px;
   }
 }
 
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $mobile) and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $tablet) and (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin non-desktop {
+  @media (max-width: $laptop) {
+    @content;
+  }
+}
+
+@mixin mobile-and-tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
