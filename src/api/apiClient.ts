@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import { baseUrl } from '../config';
+import { baseUrl, isDev } from '../config';
 
 const apiClient = axios.create({
   baseURL: `${baseUrl}`,
@@ -9,7 +9,8 @@ const apiClient = axios.create({
 const fetchData = async <T>(url: string): Promise<T> => {
   try {
     const response: AxiosResponse<T> = await apiClient.get(url);
-    console.log(response.data);
+    isDev && console.log(response.data);
+
     return response.data;
   } catch (error) {
     if (axios.isAxiosError(error) && error.response) {
